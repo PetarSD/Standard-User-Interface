@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body{
+    background-image: url(pozadina.jpg);
+}
+.title {
+	font-family: "Montserrat";
+	text-align: center;
+	color: #FFF;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 250px;
+	letter-spacing: 1px;
+}
+
+h1 {
+	background-image: url(giphy.gif);
+	background-size: cover;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 110px;
+	line-height: .75;
+	margin: 10px 0;
+}
+
+.white-mode {
+	text-decoration: none;
+    padding: 7px 10px;
+	background-color: #122;
+	border-radius: 3px;
+	color: #FFF;
+	transition: .35s ease-in-out;
+	top: 300px;
+	font-family: "Montserrat";
+}
+
+.white-mode:hover {
+	background-color: #FFF;
+	color: #122;
+}
+.nav_menu{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+header{
+    border:solid black 5px;
+    border-style: double;
+    background: linear-gradient(269deg, #d91313, #e15b00, #e8e40e, #8de300, #00e313, #00ff9c, #00c5ff, #0049ff, #6000ff, #c500ff, #ff00b2);
+    background-size: 2200% 2200%;
+    animation: Header 11s ease infinite;
+}
+     @keyframes Header {
+        0%{background-position:0% 51%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 51%}
+    }
+#clanak1{
+	background:radial-gradient(blue,lightblue);
+	border:dotted black 3px;
+	opacity: 0.5;
+}
+#o_meni{
+
+}
+#o_menidiv{
+	text-align:center;
+
+}
+#o_menih2{
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 30px;
+	background-color:chartreuse;
+	border:solid black 2px;
+	border-bottom: indigo 5px;
+	text-shadow: 2px 2px 5px red;
+	border-radius: 50%;
+	margin-left: 700px;
+	margin-right: 700px;
+	box-shadow: 10px 10px;
+}
+#o_menih2:hover{
+	background-color: yellow;
+	border-radius: 0%;
+}
+#o_menip{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:25px;
+	color: yellow;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+#naslovi{
+    text-align:center;
+    font-size:30px;
+    font-weight: 500;
+    text-decoration: underline;
+}
+footer{
+    border:solid black 2px;
+    text-align: center;
+	background-color: dodgerblue;
+	margin-top: 15px;
+	color: greenyellow;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+#footer_naslovna{
+	margin-top:92px;
+}
+
+#table {
+	margin: auto;
+	padding: 10px;
+	background-color: black;
+  }
+#pocetak_igre{
+	text-align: center;
+	margin-top: 10px;	
+}
+#ispis{
+	font-size: 30px;
+	text-align: center;
+	background-color:purple;
+	color: red;
+	border:double 5px blue;
+	border-radius:10%;
+	margin-left:500px;
+	margin-right:500px;
+}
+#ispis:hover{
+	background-color:green;
+	color:white;
+
+}
+#umotvorine{
+	font-size: 40px;
+	text-align: center;
+	font-weight: 500;
+	text-decoration: underline;
+	color:green;
+	background-color: blue;
+	margin-left:500px;
+	margin-right:500px;
+}
+#umotvorine:hover{
+	background-color:purple;
+	color:black;
+}
+.h2galerija{
+	font-size:35px;
+	text-decoration-line:underline;
+	margin-top:20px;
+	text-decoration-style:wavy;
+	text-decoration-color:red;
+	color:orangered
+
+}
+form{
+	text-align:center;
+	border:solid lightskyblue 3px;
+	margin-left:250px;
+	margin-right:250px;
+	padding-top: 30px;
+	padding-bottom: 30px;;
+
+}
+input{
+	background-color:lightblue;
+	border:1px red solid;
+}
+#p_rostilj{
+	display:inline-block;
+	color:coral;	
+}
+#rostilj{
+	background-color: coral;
+}
+#p_pizza{
+	display:inline-block;
+	color: crimson;
+}
+#pizza{
+	background-color: crimson;
+}
+.forma_dugme {
+	text-decoration: none;
+    padding: 7px 10px;
+	background-color: #122;
+	border-radius: 3px;
+	color:gold;
+	transition: .35s ease-in-out;
+	top: 300px;
+	font-family: "Montserrat";
+}
+
+.forma_dugme:hover {
+	background-color: #FFF;
+	color: #122;
+}
+#naruci_dugme{
+	margin-top:30px;
+	padding-left:50px;
+	padding-right:50px;
+}
+#kalkulacija_dugme{
+	margin-bottom: 15px;
+}

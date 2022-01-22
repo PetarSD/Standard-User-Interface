@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Porudžbina</title>
+    <link rel="stylesheet" href="dizajn.css">
+</head>
+<body>
+    <header>
+		<div class="title">
+			<h1>SKI<br/>Projekat</h1>
+		</div>
+
+		<div class="nav_menu">
+				<a href="index.html"  class="white-mode">Home</a>
+				<a href="druga.html"  class="white-mode">Galerija</a>
+				<a href="treca.html"  class="white-mode">Porudžbina</a>
+				<a href="igrica.html" class="white-mode">Slagalica</a>
+		</div>
+    </header>
+
+    <div id="naslov_druge_str">
+		<p id="naslovi">Porudžbina</p>
+	</div>
+
+    <form name="myForm" action=" " method="POST" style="font-size:25px; color: yellow; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">
+        Ime: <input type="text" name="ime" placeholder="Vaše ime" pattern="[A-Za-z]{3,}" title="Potrebno je uneti minimum 3 slova!" required>
+        Prezime: <input type="text" name="prezime"placeholder="Vaše prezime" pattern="[A-Za-z]{3,}" title="Potrebno je uneti minimum 3 slova!" required> <br> <br>
+        Adresa: <input type="text" name="Adresa" placeholder="Vaša adresa" pattern=".{5,12}" title="Potrebno je uneti validnu adresu!" required> <br> <br>
+        Broj telefona: <input  name="broj" placeholder="Vaš broj telefona" pattern=".[0-9]{5,12}"  title="Unesite validan broj telefona!" required> <br> <br>
+        Izaberite Porudžbinu: <br>
+        <p id="p_rostilj">Jela sa roštilja</p>
+          <select NAME="rostilj" onChange="calcuatePrice()" id="rostilj">
+            <optgroup label="Rostilj">
+             <option value="0" selected>Izaberi jela sa roštilja</option>
+             <option value="250"> Pljeskivica | 190g | 250RSD</option>
+             <option value="300"> Punjena pljeskavica | 250g | 300RSD</option>
+             <option value="350"> Ćevapi | 250g | 350RSD</option>
+             <option value="300"> Bela vešalica | 250g | 300RSD</option>
+             <option value="350"> Ražnjici | 250g | 350RSD</option>
+            </optgroup>
+          </select>
+          <p id="p_pizza">Pizza</p>
+          <select NAME="pizza" onChange="calculatePrice()" id="pizza">
+            <optgroup label="Pizza">
+              <option value="0" selected>Izaberi vrstu pice</option>
+              <option value="200"> Kaprićoza | 200g | 200RSD</option>
+              <option value="200"> Margerita | 200g | 200RSD</option>
+              <option value="250"> Napolitana | 200g | 250RSD</option>
+              <option value="250"> Sicilijana | 200g | 250RSD</option>
+            </optgroup>
+          </select>
+          <hr>
+         Datum isporuke: <input type="date" value="2020-01-24" min="2020-01-24"> <br>
+        <br> Izaberite prevoz do Vaše lokacije: <br> <br>
+        <input type="radio" name="vozilo" value="Auto"> Automobil 
+        <input type="radio" name="vozilo" value="motor"> Motor <br>
+        <br>
+        <hr>
+        <br>
+        <button type="button" class="forma_dugme" id="kalkulacija_dugme" onclick="calculatePrice()">Proračunaj iznos</button> <br>
+
+        Nova preračunata cena:<INPUT type="text" id="PicExtPrice" Size=8>  <br> <br>
+          <hr>
+        <button type="submit" class="forma_dugme" id="naruci_dugme">Naruči</button>
+      
+      </form>
+          <script>
+      function calculatePrice(myform){
+      
+      var elt = document.getElementById("rostilj");
+      var rostilj = elt.options[elt.selectedIndex].value;
+        
+      var elt = document.getElementById("pizza");
+      var pizza = elt.options[elt.selectedIndex].value;
+        
+      rostilj = parseInt(rostilj);
+      pizza = parseInt(pizza);
+       
+      var total = rostilj+pizza;
+        
+      document.getElementById("PicExtPrice").value=total;
+      
+      }
+          </script>
+    
+    <footer>
+        <p>Copyright &copy 2020. All rights reserved | Petar Milićević RT-13/18 | VIŠER</p>
+    </footer>
+</body>
+</html>

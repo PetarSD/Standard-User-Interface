@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Slagalica 3x3</title>
+    <link rel="stylesheet" href="dizajn.css">
+    <style>
+    .delic1 {
+        width: 120px;
+        height: 120px;
+        background: url(viser.jpg);
+        background-position: left top;
+    }
+    .delic2 {
+        width: 120px;
+        height: 120px;
+        background: url(viser.jpg);
+        background-position: center top;
+    }
+    .delic3 {
+        width: 120px;
+        height: 120px;
+        background: url(viser.jpg);
+        background-position: right top;
+    }
+    .delic4 {
+        width: 120px;
+        height: 120px;
+        background: url(viser.jpg);
+        background-position: left center;
+    }
+    .delic5 {
+        width: 120px;
+        height: 120px;
+        background: url(viser.jpg);
+        background-position: center center;
+        }
+    .delic6 {
+        width: 120px;
+        height: 120px;
+        background: url(viser.jpg);
+        background-position: right center;
+    }
+    .delic7 {
+        width: 120px;
+        height: 120px;
+        background: url(viser.jpg);
+        background-position: left bottom;
+    }
+    .delic8 {
+        width: 120px;
+        height: 120px;
+        background: url(viser.jpg);
+        background-position: center bottom;
+    }   
+    .delic9 {
+        width: 120px;
+        height: 120px;
+        background: white;
+    }
+    .delic1, .delic2, .delic3, .delic4, .delic5, .delic6, .delic7, .delic8, .delic9 {
+        display: table-cell;
+        width: 120px;
+        height: 120px;
+        border: 1px solid white;
+        background: url(viser.jpg); 
+        cursor: pointer;
+    }
+
+    .delic1 {background-position: left top;}
+    .delic2 {background-position: center top;}
+    .delic3 {background-position: right top;}
+    .delic4 {background-position: left center;}
+    .delic5 {background-position: center center;}
+    .delic6 {background-position: right center;}
+    .delic7 {background-position: left bottom;}
+    .delic8 {background-position: center bottom;}
+    .delic9 {background: white; cursor: default;}
+    </style>
+
+</head>
+<body>
+
+    <header>
+		<div class="title">
+			<h1>SKI<br/>Projekat</h1>
+		</div>
+
+		<div class="nav_menu">
+				<a href="index.html"  class="white-mode">Home</a>
+				<a href="druga.html"  class="white-mode">Galerija</a>
+				<a href="treca.html"  class="white-mode">Porudžbina</a>
+				<a href="igrica.html" class="white-mode">Slagalica</a>
+		</div>
+    </header>
+
+    <div id="naslov_druge_str">
+		<p id="naslovi">Slagalica 3x3</p>
+	</div>
+    
+    <div id="table" style="display: table;">
+        <div id="red1" style="display: table-row;">
+            <div id="celija11" class="delic1" onClick="clickDelic(1,1);"></div>
+            <div id="celija12" class="delic2" onClick="clickDelic(1,2);"></div>
+            <div id="celija13" class="delic3" onClick="clickDelic(1,3);"></div>
+        </div>
+        <div id="red2" style="display: table-row;">
+            <div id="celija21" class="delic4" onClick="clickDelic(2,1);"></div>
+            <div id="celija22" class="delic5" onClick="clickDelic(2,2);"></div>
+            <div id="celija23" class="delic6" onClick="clickDelic(2,3);"></div>
+        </div>
+        <div id="red3" style="display: table-row;">
+            <div id="celija31" class="delic7" onClick="clickDelic(3,1);"></div>
+            <div id="celija32" class="delic8" onClick="clickDelic(3,2);"></div>
+            <div id="celija33" class="delic9" onClick="clickDelic(3,3);"></div>
+        </div>
+    </div>
+    <div id="pocetak_igre">
+        <button onClick="promesaj();" class="white-mode">Započni igru</button>
+    </div>
+
+    <script>
+        function zameniMesta(celija1,celija2) {
+            var temp = document.getElementById(celija1).className;
+            document.getElementById(celija1).className = document.getElementById(celija2).className;
+            document.getElementById(celija2).className = temp;
+        }
+
+        function promesaj() {
+            for (var red=1;red<=3;red++) { 
+            for (var kolona=1;kolona<=3;kolona++) { 
+  
+            var red2=Math.floor(Math.random()*3 + 1); 
+            var kolona2=Math.floor(Math.random()*3 + 1); 
+     
+            zameniMesta("celija"+red+kolona,"celija"+red2+kolona2);
+            }    
+        } 
+    }
+
+        function clickDelic(red,kolona) {
+            var cell = document.getElementById("celija"+red+kolona);
+            var tile = cell.className;
+        if (tile!="delic9") { 
+                if (kolona<3) {
+                    if ( document.getElementById("celija"+red+(kolona+1)).className=="delic9") {
+                         zameniMesta("celija"+red+kolona,"celija"+red+(kolona+1));
+                    return;
+                     }
+                 }
+
+             if (kolona>1) {
+                 if ( document.getElementById("celija"+red+(kolona-1)).className=="delic9") {
+                         zameniMesta("celija"+red+kolona,"celija"+red+(kolona-1));
+                return;
+                }
+            }
+
+            if (red>1) {
+                if ( document.getElementById("celija"+(red-1)+kolona).className=="delic9") {
+                        zameniMesta("celija"+red+kolona,"celija"+(red-1)+kolona);
+                return;
+                }
+             }
+
+            if (red<3) {
+                if ( document.getElementById("celija"+(red+1)+kolona).className=="delic9") {
+                        zameniMesta("celija"+red+kolona,"celija"+(red+1)+kolona);
+                return;
+                }
+            } 
+        }
+  
+    }
+    </script>
+
+    <footer>
+        <p>Copyright &copy 2020. All rights reserved | Petar Milićević RT-13/18 | VIŠER</p>
+    </footer>
+
+</body>
+</html>

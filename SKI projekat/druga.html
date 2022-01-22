@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="dizajn.css">
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        .kolona {
+          float: left;
+          width: 25%;
+          padding: 10px;
+          border:crimson 3px dashed;
+          margin-bottom: 10px;
+        }
+        .kolona img {
+          opacity: 0.8; 
+          cursor: pointer; 
+        }      
+        .kolona img:hover {
+          opacity: 1;
+        }
+        .red:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        .prikaz {
+          position: relative;
+          display: none;
+          text-align: center;
+          border:5px burlywood dotted;
+          border-bottom: double brown 5px;
+          border-top: double brown 5px;
+        }        
+        #imgtext {
+          position: absolute;
+          bottom: 15px;
+          left: 15px;
+          color: white;
+          font-size: 20px;
+        }        
+        .closedugme {
+          position: absolute;
+          top: 10px;
+          right: 15px;
+          color: white;
+          font-size: 35px;
+          cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+	<header>
+		<div class="title">
+			<h1>SKI<br/>Projekat</h1>
+		</div>
+
+		<div class="nav_menu">
+				<a href="index.html"  class="white-mode">Home</a>
+				<a href="druga.html"  class="white-mode">Galerija</a>
+				<a href="treca.html"  class="white-mode">Porudžbina</a>
+				<a href="igrica.html" class="white-mode">Slagalica</a>
+		</div>
+	</header>
+    
+        <div id="naslov_druge_str">
+            <p id="naslovi">Galerija slika</p>
+        </div>
+      
+      <div class="red">
+
+        <h2 class="h2galerija">Priroda</h2>
+        <div class="kolona">
+          <img src="jezero.jpg" alt="Jezero" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="kolona">
+          <img src="vodopad.jpg" alt="Vodopad" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="kolona">
+          <img src="svetlost.jpg" alt="Svetlost sunca" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="kolona">
+            <img src="put.jpg" alt="Put u prirodi" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <h2 class="h2galerija">Umetnost</h2>
+        <div class="kolona">
+          <img src="umetnost1.jpg" alt="Umetničko delo" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="kolona">
+          <img src="umetnost2.jpg" alt="Umetničko delo" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="kolona">
+          <img src="umetnost3.jpg" alt="Umetničko delo" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="kolona">
+            <img src="umetnost4.jpg" alt="Umetničko delo" style="width:100%" onclick="myFunction(this);">
+        </div>      
+      </div>
+      
+      <div class="prikaz">
+        <span onclick="this.parentElement.style.display='none'" class="closedugme">&times;</span>
+        <img id="velikaslika" style="width:100%">
+        <div id="imgtext"></div>
+      </div>
+      <script>
+        function myFunction(imgs) {
+          var prosiriSliku = document.getElementById("velikaslika");
+          var imgText = document.getElementById("imgtext");
+          prosiriSliku.src = imgs.src;
+          imgText.innerHTML = imgs.alt;
+          prosiriSliku.parentElement.style.display = "block";
+        }
+    </script>
+    
+    <footer>
+        <p>Copyright &copy 2020. All rights reserved | Petar Milićević RT-13/18 | VIŠER</p>
+    </footer>
+</body>
+</html>

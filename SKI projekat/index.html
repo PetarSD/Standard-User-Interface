@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Projekat</title>
+	<link rel="stylesheet" href="dizajn.css">
+</head>
+
+<body onload="pocetak()">
+
+	<header>
+		<div class="title">
+			<h1>SKI<br/>Projekat</h1>
+		</div>
+
+		<div class="nav_menu">
+				<a href="index.html"  class="white-mode">Home</a>
+				<a href="druga.html"  class="white-mode">Galerija</a>
+				<a href="treca.html"  class="white-mode">Porudžbina</a>
+				<a href="igrica.html" class="white-mode">Slagalica</a>
+		</div>
+	</header>
+
+	<div id="naslov_druge_str">
+		<p id="naslovi">Početna stranica</p>
+	</div>
+	
+	<section>	
+		<article id="o_meni">
+			<div id="o_menidiv">
+				<h2 id="o_menih2">O studentu:</h2>
+				<p>Postavljeno <time datetime="2020-01-18T16:31:24+02:00">18. Januara 2020.</time> od strane <a href="#">PetarSD</a></p>
+
+				<p id="o_menip">Pohađao sam osnovnu školu "Jovan Jovanović Zmaj", kao i Tehnicku školu odsek Administrator Računarskih mreža u Smederevu.
+			   Trenutno studiram na Visokoj školi elektreoteknike i računarstva strukovnih studija u Beogradu.
+				</p>
+		   </div>
+		</article>	
+	</section>
+
+	<article id="clanak1" style="opacity:90%">
+		<h2 id="umotvorine">Umotvorine</h2>
+        <p id="ispis">Miš uz pušku, miš niz pušku.</p>
+    </article>
+
+	<script>
+	function pocetak() {
+		vreme = setInterval(prikaz, 10000);
+	  }
+	  var brojac=0
+	  function prikaz() { 
+		  brojac++;
+		  if (brojac == 1)
+		  {
+		  document.getElementById("ispis").innerHTML = "Riba ribi grize rep.";
+		  }
+		  if (brojac == 2)
+		  {
+		  document.getElementById("ispis").innerHTML = "Na vrh brda vrba mrda, vrba mrda na vrh brda.";
+		  }
+		  if (brojac == 3)
+		  {
+		  document.getElementById("ispis").innerHTML = "Ko mnogo priča, ili sve zna, ili sve laže.";
+		  }
+		  if (brojac == 4)
+		  {
+		  document.getElementById("ispis").innerHTML = "Teško vuku koga tice hrane, i junaku koga žene brane.";
+		  }
+		  if (brojac == 5)
+		  {
+		  document.getElementById("ispis").innerHTML = "Gvožđe se kuje dok je vruće.";
+		  brojac=0;
+		  }
+		
+		}
+	</script>
+
+	<footer id="footer_naslovna">
+		<p>Copyright &copy 2020. All rights reserved | Petar Milićević RT-13/18 | VIŠER</p>
+	</footer>
+
+</body>
+
+</html>
